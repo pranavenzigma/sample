@@ -1,0 +1,27 @@
+<apex:component Controller="JobCustumControllerApex">
+    <apex:pageBlock >
+   
+        <apex:pageBlockSection title="job Details" >
+            <apex:repeat value="{!Detail}" var="job">
+            <ol>
+             
+                <apex:outputField value="{! job.Number_of_Positions__c}" /><br/>
+                <apex:outputField value="{! job.Required_Skills__c}" /><br/>
+                <apex:outputField value="{! job.Salary_Offered__c}" /><br/>
+                <apex:outputField value="{! job.Name__c}" /><br/>
+                <apex:outputField value="{! job.Manager__c}" /><br/>
+                <apex:outputField value="{! job.Job_Type__c}" /><br/>
+                 <apex:outputField value="{! job.Expires_On__c}" /><br/>
+                 <apex:outputField value="{! job.Active__c}" /><br/>
+                 <apex:outputField value="{! job.Qualification_Required__c}" /><br/>
+                 <apex:outputField value="{! job.Certification_Required__c}" /><br/>
+                 
+                </ol>
+            
+            
+            
+            </apex:repeat>
+           
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+</apex:component>

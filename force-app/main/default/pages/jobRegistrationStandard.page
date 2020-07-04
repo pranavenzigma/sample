@@ -1,0 +1,64 @@
+<apex:page standardController="Job_Yourname__c" tabStyle="Job_Yourname__c">
+    <apex:stylesheet value="{!$Resource.css_all}"/>
+    
+    
+    <apex:form id="js" onclick="check()" >
+    <apex:pageBlock mode="edit" title="Job wizard" id="Jobwizard">
+        <apex:image url="{!$Resource.Enzigma_logo}" id="img"  width="220" height="100" />
+        <br />
+        
+        
+        
+        
+        <apex:pageBlockSection >      
+            <apex:inputField value="{! Job_Yourname__c.job_Description__c}"/>
+            <apex:inputField value="{! Job_Yourname__c.Number_of_Positions__c}" id="NumberofPositions"/>
+            <apex:inputField value="{! Job_Yourname__c.Required_Skills__c}" id="RequiredSkills"/>
+            <apex:inputField value="{! Job_Yourname__c.Salary_Offered__c}" id="SalaryOffered"/>            
+            <apex:inputField value="{! Job_Yourname__c.Name__c}"/>
+            <apex:inputField value="{! Job_Yourname__c.Manager__c}" id="Manager"/>
+            <apex:inputField value="{! Job_Yourname__c.Job_Type__c}" id="JobType"/>
+            <apex:inputField value="{! Job_Yourname__c.Hired_Applicants__c}"/>
+            <apex:inputField value="{! Job_Yourname__c.Expires_On__c}" id="ExpiresOn"/>
+            <apex:inputField value="{! Job_Yourname__c.Active__c}" id="Active"/>     
+            <apex:inputField value="{! Job_Yourname__c.Qualification_Required__c}" id="QualificationRequired"/>
+            <apex:inputField value="{! Job_Yourname__c.Certification_Required__c}" id="CertificationRequired"/>
+             <apex:commandButton action="{! save}" value="save & next" id="Btn" />
+
+      
+          
+          
+          <script>
+            function check()
+        {
+            
+            
+           
+             var Manager=document.getElementById('{!$Component.Manager}').value;       
+             var nop=document.getElementById('{!$Component.NumberofPositions}').value;              
+             var ExpiresOn=document.getElementById('{!$Component.ExpiresOn}').value;          
+             var SO=document.getElementById('{!$Component.SalaryOffered}').value;              
+             var JobType=document.getElementById('{!$Component.JobType}').value;            
+             var RS=document.getElementById('{!$Component.RequiredSkills}').value;           
+             var QR=document.getElementById('{!$Component.QualificationRequired}').value;            
+             var CR=document.getElementById('{!$Component.CertificationRequired}').value;             
+             var Active=document.getElementById('{!$Component.Active}').checked;
+            
+            if(Manager=="" ||nop=="" || ExpiresOn=="" || SO=="" || JobType=="" || RS=="" || QR=="" || CR=="" ||Active=="false")
+                {
+                    document.getElementById('{!$Component.Btn}').disabled = true;
+                    // alert('You Can Not Create Record');
+                }
+            else
+                {
+                    document.getElementById('{!$Component.Btn}').disabled = false;
+                }
+           
+        }
+            </script>
+          
+          
+                </apex:pageBlockSection>       
+        </apex:pageBlock>     
+    </apex:form>  
+  </apex:page>
